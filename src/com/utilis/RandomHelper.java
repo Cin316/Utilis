@@ -16,6 +16,11 @@ public class RandomHelper {
 		Random ran = new Random();
 		return ran.nextInt(max-min)+min;
 	}
-	//Add methods for other data types.
+	public static char randomCapChar(){
+		Random ran = new Random();
+		char ch = (char)(ran.nextInt('Z'-'A'+1)+'A');
+		return ch;
+	}
+	//TODO Add methods for other data types.
 	
 }
