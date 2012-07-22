@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Utilis{
 	
-	public static String version = "v. 0.2";
+	public static String version = "v. 0.3";
 	
 	public static boolean onMac;
 	public static boolean onWindows;
@@ -53,7 +53,7 @@ public class Utilis{
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("dock:name", appName);
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name",appName);
-			// TODO Add new way to do about windows.
+			// TODO Add new way to detect Windows.
 			onMac = true;
 		} else if (osName.startsWith("Window")){
 			onWindows = true;
