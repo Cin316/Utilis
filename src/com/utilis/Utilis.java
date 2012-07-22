@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Utilis{
 	
-	public static String version = "v. 0.2";
+	public static String version = "v. 0.3";
 	
 	public static boolean onMac;
 	public static boolean onWindows;
@@ -53,7 +53,7 @@ public class Utilis{
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("dock:name", appName);
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name",appName);
-			// TODO Add new way to do about windows.
+			// TODO Add new way to detect Windows.
 			onMac = true;
 		} else if (osName.startsWith("Window")){
 			onWindows = true;
@@ -80,6 +80,48 @@ public class Utilis{
 			return null;
 		}
 		
+	}
+	
+	public int getGCF(int n1, int n2)
+	{
+		int rem = 0;
+		int gcf = 0;
+		do
+		{
+			rem = n1 % n2;
+			if (rem == 0)
+				gcf = n2;
+			else
+			{
+				n1 = n2;
+				n2 = rem;
+			}
+		}
+		while (rem != 0);
+		return gcf;
+	}
+
+	public int getLCM(int a, int b)
+	{
+		int num1, num2;
+		if (a > b)
+		{
+            num1 = a;
+            num2 = b;
+		}
+		else
+		{
+			num1 = b;
+			num2 = a;
+		}
+		for (int i = 1; i <= num2; i++)
+		{
+            if ((num1 * i) % num2 == 0)
+            {
+                    return i * num1;
+            }
+		}
+    	throw new Error("Error in LCM!");
 	}
 	
 }
