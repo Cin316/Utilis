@@ -53,7 +53,7 @@ public class Utilis{
 			System.setProperty("apple.laf.useScreenMenuBar", "true");
 			System.setProperty("dock:name", appName);
 			System.setProperty("com.apple.mrj.application.apple.menu.about.name",appName);
-			// TODO Add new way to detect Windows.
+			// TODO Add new way to about windows on Mac.
 			onMac = true;
 		} else if (osName.startsWith("Window")){
 			onWindows = true;
@@ -82,7 +82,7 @@ public class Utilis{
 		
 	}
 	
-	public int getGCF(int n1, int n2)
+	public static int getGCF(int n1, int n2)
 	{
 		int rem = 0;
 		int gcf = 0;
@@ -101,7 +101,7 @@ public class Utilis{
 		return gcf;
 	}
 
-	public int getLCM(int a, int b)
+	public static int getLCM(int a, int b)
 	{
 		int num1, num2;
 		if (a > b)
