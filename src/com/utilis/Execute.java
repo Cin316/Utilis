@@ -1,6 +1,4 @@
-package com.utilis.game;
-
-import com.utilis.*;
+package com.utilis;
 
 public class Execute {
 
