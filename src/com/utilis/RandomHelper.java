@@ -16,6 +16,20 @@ public class RandomHelper {
 		Random ran = new Random();
 		return ran.nextInt(max-min)+min;
 	}
+	
+	public static double randomDouble(){
+		Random ran = new Random();
+		return ran.nextDouble();
+	}
+	public static double randomDouble(int max){
+		Random ran = new Random();
+		return (max * ran.nextDouble());
+	}
+	public static double randomDouble(int max, int min){
+		Random ran = new Random();
+		return (min + (max-min) * ran.nextDouble());
+	}
+	
 	public static char randomCapChar(){
 		Random ran = new Random();
 		char ch = (char)(ran.nextInt('Z'-'A'+1)+'A');
