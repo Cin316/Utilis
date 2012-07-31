@@ -21,11 +21,11 @@ public class RandomHelper {
 		Random ran = new Random();
 		return ran.nextDouble();
 	}
-	public static double randomDouble(int max){
+	public static double randomDouble(double max){
 		Random ran = new Random();
 		return (max * ran.nextDouble());
 	}
-	public static double randomDouble(int max, int min){
+	public static double randomDouble(double max, double min){
 		Random ran = new Random();
 		return (min + (max-min) * ran.nextDouble());
 	}
