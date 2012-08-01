@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 
 public class Utilis{
 	
-	public static String version = "v. 0.3.2";
+	public static String version = "v. 0.3.2.1";
 	
 	public static boolean onMac;
 	public static boolean onWindows;

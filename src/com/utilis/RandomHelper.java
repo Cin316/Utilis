@@ -10,10 +10,12 @@ public class RandomHelper {
 	}
 	public static int randomInt(int max){
 		Random ran = new Random();
+		max++; //Fixes randomInt(0,2) only returning 0 and 1.
 		return ran.nextInt(max);
 	}
 	public static int randomInt(int min,int max){
 		Random ran = new Random();
+		max++; //Fixes randomInt(0,2) only returning 0 and 1.
 		return ran.nextInt(max-min)+min;
 	}
 	
