@@ -69,5 +69,14 @@ public class WordArrays {
 		}
 		return array;
 	}
+	/*
+	public static <T> T[] objectArrayToTypeArray(Object[] o){
+		T[] array = new T[o.length];
+		for (int i=0;i<o.length;i++){
+			array[i] = (T)o[i];
+		}
+		return array;
+	}
+	*/
 	
 }
