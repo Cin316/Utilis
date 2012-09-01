@@ -44,4 +44,34 @@ public class Math {
     	throw new Error("Error in LCM!");
 	}
 	
+	public static int[] getFirstXTriangleNumbers(int x){
+		
+		int[] nums = new int[x];
+		for(int i=0; i<=x; i++){
+			int num = x;
+			for(int t=num; t>0;t--){
+				num+=t;
+			}
+			nums[x] = num;
+		}
+		return nums;
+	}
+	
+	public static int[] getXNumbersOfFibonacciSequence(int x){
+		
+		int[] nums = new int[x];
+		nums[0] = 0;
+		if(nums.length>=2){
+			nums[1] = 1;
+		}
+		if(nums.length>=3){
+			for(int i=2; i<=x; i++){
+				nums[i] = nums[i-1] + nums[i-2];
+				
+			}
+		}
+		return nums;
+		
+	}
+	
 }
