@@ -37,6 +37,10 @@ public class RandomHelper {
 		char ch = (char)(ran.nextInt('Z'-'A'+1)+'A');
 		return ch;
 	}
-	//TODO Add methods for other data types.
+	public static char randomLowercaseChar(){
+		Random ran = new Random();
+		char ch = (char)(ran.nextInt('z'-'a'+1)+'a');
+		return ch;
+	}
 	
 }
