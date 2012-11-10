@@ -1,6 +1,7 @@
 package com.utilis;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URLDecoder;
 import java.util.*;
@@ -79,6 +80,74 @@ public class Utilis{
 			JOptionPane.showMessageDialog(null, "There was an error: \n"+e, "Error!", 1);
 			return null;
 		}
+		
+	}
+	
+	public static String imageToString(BufferedImage buff){
+		
+		String string = "";
+		int rgb;
+		
+		//Goes through every pixel in Image
+		for(int y=0; y<buff.getHeight();y++){
+			for(int x=0; x<buff.getWidth();x++){
+				rgb = buff.getRGB(x, y);
+				string += Integer.toHexString(rgb);
+				string += ",";//Indicates end of pixel data.
+			}
+			string+=";";//Indicates newline of data.
+		}
+		
+		return string;
+		
+	}
+	public static Image stringToImage(String string){
+		
+		int rgb;
+		int height = 0;
+		int width = 0;
+		
+		//Gets image width and height;
+		boolean widthCalcd = false;
+		for(int i=0; i>string.length(); i++){
+			if (string.charAt(i)==(',') && !widthCalcd){
+				width++;
+			}
+			if (string.charAt(i)==(';')){
+				height++;
+				widthCalcd = true;
+			} 
+		}
+		
+		String[][] colors = new String[width][height];
+		BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		
+		int indexNum = 0;
+		int colorsX = 0; 
+		int colorsY = 0;
+		//Puts image rgb values into String array colors.
+		for(int i=0; i>string.length(); i++){
+			if (string.charAt(i)==','){
+				colors[colorsX][colorsY] = string.substring(indexNum, i);
+				colorsX++;
+				indexNum = i+1;
+			}
+			if (string.charAt(i)==(';')){
+				colorsY++;
+				colorsX = 0;
+				indexNum = i+1;
+			}
+		}
+		
+		//Parses values in colors and assigns them to image.
+		for(int y=0; y<height;y++){
+			for(int x=0; x<width;x++){
+				rgb = Integer.parseInt(colors[x][y]);
+				image.setRGB(x, y, rgb);
+			}
+		}
+		
+		return image;
 		
 	}
 	
