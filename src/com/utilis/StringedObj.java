@@ -8,6 +8,6 @@ package com.utilis;
 public interface StringedObj {
 	
 	public String saveString();
-	public StringedObj loadString();
+	public StringedObj loadString(String s);
 	
 }
