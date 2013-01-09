@@ -74,4 +74,28 @@ public class Math {
 		
 	}
 	
+	// returns the sum of all integers 1 + 2 + .... + n-1 + n
+	public static int sum(int n)
+	{
+		if( n == 1)
+			return 1;
+		return n + sum(n-1);
+	}
+	
+	// returns n factorial
+	public static int fact(int n)
+	{
+		if (n == 1)
+			return 1; 
+		return n * fact(n-1);
+	}
+	
+	// returns n1 raised to the n2 power
+	public static int pow(int n1, int n2)
+	{
+		if(n2==1)
+			return n1;
+		return n1 * pow(n1,n2 - 1);
+	}
+	
 }
