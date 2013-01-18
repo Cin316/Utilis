@@ -83,7 +83,7 @@ public class Math {
 	}
 	
 	// returns n factorial
-	public static int fact(int n)
+	public static int factorial(int n)
 	{
 		if (n == 1)
 			return 1; 
@@ -91,7 +91,7 @@ public class Math {
 	}
 	
 	// returns n1 raised to the n2 power
-	public static int pow(int n1, int n2)
+	public static int power(int n1, int n2)
 	{
 		if(n2==1)
 			return n1;
