@@ -87,7 +87,7 @@ public class Math {
 	{
 		if (n == 1)
 			return 1; 
-		return n * fact(n-1);
+		return n * factorial(n-1);
 	}
 	
 	// returns n1 raised to the n2 power
@@ -95,7 +95,7 @@ public class Math {
 	{
 		if(n2==1)
 			return n1;
-		return n1 * pow(n1,n2 - 1);
+		return n1 * power(n1,n2 - 1);
 	}
 	
 }
