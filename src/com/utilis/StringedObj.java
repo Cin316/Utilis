@@ -7,7 +7,7 @@ package com.utilis;
  */
 public interface StringedObj {
 	
-	public String saveString();
-	public StringedObj loadString(String s);
+	public String convertToString();
+	public StringedObj createFromString(String s);
 	
 }
