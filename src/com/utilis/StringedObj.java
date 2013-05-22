@@ -5,9 +5,18 @@ package com.utilis;
  * @author Cin316
  *
  */
-public interface StringedObj {
+public interface StringedObj { // TODO Add exception class thrown by createFromString(String) if String is invalid.
 	
+	/**
+	 * Converts self to a String that can later be used by the createFromString(String) method to create itself again.
+	 * @return String created from self.
+	 */
 	public String convertToString();
+	/**
+	 * Takes a String and uses it to create a new StringedObj.
+	 * @param s String to create new StringedObj from.
+	 * @return StringedObj created from the original String.
+	 */
 	public StringedObj createFromString(String s);
 	
 }
