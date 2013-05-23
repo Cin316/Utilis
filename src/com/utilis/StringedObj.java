@@ -5,7 +5,7 @@ package com.utilis;
  * @author Cin316
  *
  */
-public interface StringedObj { // TODO Add exception class thrown by createFromString(String) if String is invalid.
+public interface StringedObj {
 	
 	/**
 	 * Converts self to a String that can later be used by the createFromString(String) method to create itself again.
@@ -17,6 +17,31 @@ public interface StringedObj { // TODO Add exception class thrown by createFromS
 	 * @param s String to create new StringedObj from.
 	 * @return StringedObj created from the original String.
 	 */
-	public StringedObj createFromString(String s);
+	public StringedObj createFromString(String s) throws InvalidStringedObjStringException;
+	
+	/**
+	 * Exception to be thrown if StringedObj.createFromSring(String) receives and invalid String.
+	 * @author Cin316
+	 *
+	 */
+	public class InvalidStringedObjStringException extends Exception{
+		
+		/**
+		 * Class constructor to throw exception.
+		 */
+		public InvalidStringedObjStringException(){
+			super();
+		}
+		
+		/**
+		 * Returns custom exception message that includes the name of the class that implemented StringedObj.
+		 * @return Custom message.
+		 */
+		public String getMessage(){
+			String className = super.getStackTrace()[0].getClassName();
+			return "Invalid StringedObj String given to class " + className + ".";
+		}
+		
+	}
 	
 }
